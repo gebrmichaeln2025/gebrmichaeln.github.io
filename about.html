@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Infographics Dashboard</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            margin:0;
+            font-family: 'Poppins', sans-serif;
+            background-color:#fff8f0;
+            color:#333;
+        }
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1829e6;
+            margin: 50px 20px;
+            line-height: 1.4;
+        }
+        h2 {
+            font-size: 1.6rem;
+            line-height: 1.8;
+            color: #3515ed;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #222;
+            margin-bottom: 20px;
+        }
+        nav a {
+            text-decoration:none;
+            margin: 0 25px;
+            font-weight:600;
+            font-size:1.5rem;
+            color:white;
+        }
+        nav {
+            text-align: center;
+            margin: 20px 0;
+            background-color:#3107ec;
+            padding:15px;
+            border-radius:10px;
+        }
+        .content-container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            background: linear-gradient(to right, #ffe4c4, #ffd700);
+            border-radius:15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .creator {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-top: 30px;
+            background-color: #f0e6ff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        .creator img {
+            width: 180px;
+            height: auto;
+            border-radius: 50%;
+            margin-right: 30px;
+        }
+        .creator-info {
+            max-width: 700px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 1rem;
+            color: #3107ec;
+            font-weight:bold;
+            margin: 50px 0 30px 0;
+        }
+        .footer a {
+            color:#222020;
+            text-decoration:none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <h1>About the Dashboard</h1>
+
+    <div class="content-container">
+        <h2>Purpose and Objectives</h2>
+        <p>
+            This Infographics Dashboard for Data Sharing platform is designed to provide a centralized, easy-to-understand overview 
+            of public health surveillance and emergency data...
+        </p>
+        <p>
+            The platform uses interactive infographics, charts, and visual summaries to simplify complex data...
+        </p>
+
+        <div class="creator">
+            <img src="images/negusu.jpg" alt="Mr. Negusu GEBRMICHAEL">
+            <div class="creator-info">
+                <h2>About the Developer</h2>
+                <p>
+                    Mr. Negusu GEBRMICHAEL is a Data Scientist, International applied Epidemiology, GIS Expert and Web Development and IT Specialist.
+                </p>
+                <p>
+                    Contact: <a href="mailto:negusuworkugm@gmail.com">negusuworkugm@gmail.com</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer" style="font-size: 1.5rem; color: #3107ec; font-weight: bold;">
+        Name: Mr. Negusu GEBRMICHAEL | Email: 
+        <a href="mailto:negusuworkugm@gmail.com" style="color:#e62b1e;">negusuworkugm@gmail.com</a> 
+        | Date of Production: November, 2025
+    </div>
+
+    <!-- Unified Login/Logout Panel -->
+    <div id="authPanel" style="position:fixed;top:15px;right:20px;background:#ffd700;padding:10px 15px;border-radius:10px;font-weight:bold;box-shadow:0 4px 10px rgba(0,0,0,0.2);z-index:999;">
+        <span id="authContent"></span>
+    </div>
+
+    <script>
+    function renderAuthPanel() {
+        const user = localStorage.getItem('loggedInUser');
+        const authContent = document.getElementById('authContent');
+        
+        if(user) {
+            authContent.innerHTML = `Welcome, ${user} | <a href="#" id="logoutBtn" style="color:#1829e6;font-weight:bold;">Logout</a>`;
+            
+            document.getElementById('logoutBtn').onclick = function() {
+                localStorage.removeItem('loggedInUser');
+                window.location.href = 'login.html';
+            };
+        } else {
+            authContent.innerHTML = `<a href="login.html" style="color:#1829e6;font-weight:bold;">Login</a>`;
+        }
+    }
+
+    window.onload = renderAuthPanel;
+    </script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - Infographics Dashboard</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div id="authPanel"></div>
+
+<div id="mainContent">
+    <h1>About This Dashboard</h1>
+    <section>
+        <h2>Purpose</h2>
+        <p>
+            The Infographics Dashboard consolidates public health data into visual reports 
+            to improve decision-making and rapid response during emergencies.
+        </p>
+        <h2>Features</h2>
+        <ul>
+            <li>Interactive charts and visualizations</li>
+            <li>Real-time public health updates</li>
+            <li>Centralized data for partner organizations</li>
+        </ul>
+    </section>
+</div>
+
+<div class="footer">
+    Name: Mr. Negusu GEBRMICHAEL | 
+    Email: <a href="mailto:negusuworkugm@gmail.com">negusuworkugm@gmail.com</a> | 
+    Date of Production: November, 2025
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
